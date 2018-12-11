@@ -13,16 +13,27 @@ public class Stack {
 	
 	//push method to put the item in top of the stack
 	public void push(long item){
-		this.top++;
-		this.stackArray[top] = item;
+		if(isFull()){
+			System.out.println("Stack is full");
+		} else {
+			this.top++;
+			this.stackArray[top] = item;
+
+		}
+		
 	}
 	
 	
 	//pop method to remove the item from the top
 	public long pop(){
+		if(isEmpty()){
+			System.out.println("Stack is already empty");
+			return -1;
+		} else {
 		int old_top = top;
 		top--;
 		return stackArray[old_top];
+		}
 	}
 	
 	//peak to return the item in the top
