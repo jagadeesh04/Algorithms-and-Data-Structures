@@ -4,18 +4,22 @@ public class App {
 
 	public static void main(String[] args) {
 		Stack theStack = new Stack(10);
+	
+		System.out.println(reverseString("jagad"));
 		
-		theStack.push(20);
-		theStack.push(30);
-		theStack.push(40);
-		theStack.push(50);
-		theStack.push(60);
-		
-		while(!theStack.isEmpty()){
-			long value = theStack.pop();
-			System.out.println(value);
+	}
+	
+	public static String reverseString(String str){
+		Stack charStack = new Stack(str.length());
+		for(int i=0; i<str.length(); i++){
+			charStack.push(str.charAt(i));
 		}
-		
+		String revString= "";
+		while(!charStack.isEmpty()){
+			char value = charStack.pop();
+			revString = revString+value;
+		}
+		return revString;
 	}
 	
 }
